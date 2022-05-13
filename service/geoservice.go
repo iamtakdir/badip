@@ -3,15 +3,24 @@ package service
 import (
 	"encoding/json"
 	"fmt"
-	model "github.com/iamtakdir/badip/models"
 	"io/ioutil"
 	"log"
 	"net/http"
 )
 
-var geoData model.DataModel
 
+type DataModel struct {
+	Ip       string `json:"ip"`
+	City     string `json:"city"`
+	Region   string `json:"region"`
+	Country  string `json:"country"`
+	Loc      string `json:"loc"`
+	Org      string `json:"org"`
+	Postal   string `json:"postal"`
+	Timezone string `json:"timezone"`
+}
 
+var geoData DataModel
 
 func GetGeoLocation( ip string)  {
 	token := "36b4e33420fc30"
@@ -33,10 +42,6 @@ func GetGeoLocation( ip string)  {
 		log.Fatal("error in marshaling")
 	}
 //Printing Location details
-	PrintGeoLocation(geoData)
-}
-
-func PrintGeoLocation(geolocation model.DataModel)  {
 	fmt.Println("IP : ", geoData.Ip)
 	fmt.Println("City : ", geoData.City)
 	fmt.Println("Region : ", geoData.Region)
