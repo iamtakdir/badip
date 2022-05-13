@@ -3,12 +3,13 @@ package service
 import (
 	"encoding/json"
 	"fmt"
+	model "github.com/iamtakdir/badip/models"
 	"io/ioutil"
 	"log"
 	"net/http"
 )
 
-var geoData DataModel
+var geoData model.DataModel
 
 
 
@@ -35,13 +36,13 @@ func GetGeoLocation( ip string)  {
 	PrintGeoLocation(geoData)
 }
 
-func PrintGeoLocation(geolocation DataModel)  {
+func PrintGeoLocation(geolocation model.DataModel)  {
 	fmt.Println("IP : ", geoData.Ip)
 	fmt.Println("City : ", geoData.City)
 	fmt.Println("Region : ", geoData.Region)
 	fmt.Println("Country : ", geoData.Country)
 	fmt.Println("Location : ", geoData.Loc)
-	fmt.Println("ISP : ", geoData.Org)
+	fmt.Println("Company : ", geoData.Org)
 	fmt.Println("Postal Code : ", geoData.Postal)
 	fmt.Println("TimeZone : ", geoData.Timezone)
 }
