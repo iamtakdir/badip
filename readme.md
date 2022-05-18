@@ -27,7 +27,7 @@ BadIP requires the following to run:
 [ipinfo]: https://ipinfo.io/
 ## Installation
 
-Clone the repository [BadIp](https://github.com/iamtakdir/badip) in your local machine. Grab your free API token from here [IP Info](https://ipinfo.io/pricing), choose free package and copy the token from dashboard. 
+Clone the repository in your local machine. Grab your free API token from here [IP Info](https://ipinfo.io/pricing), choose free package and copy the token from dashboard. 
 Then replace the `token` in `config.go`file with your token. 
 
 `config/config.go`
@@ -45,16 +45,18 @@ func GetToken() string {
 ### Usage `./badip 1.1.1.1`
 Running using Golang
 ```bash
-go run main.go
+go run main.go 1.1.1.1
 ```
 Runing as an 
 executable  file 
 ```bash
-go build
+$go build
+$./badip 1.1.1.1
 ```
 Installing in PATH
 ```bash
-go install 
+$go install 
+$badip 1.1.1.1
 ```
 
 ## Contributing
