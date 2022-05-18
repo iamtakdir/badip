@@ -4,7 +4,7 @@
 ```bash
 ./badip 1.1.1.1
 ```
-``` json
+``` bash
 IP :  1.1.1.1
 City :  Los Angeles
 Region :  California
